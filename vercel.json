@@ -1,0 +1,18 @@
+{
+  "builds": [
+    {
+      "src": "backend/app/main.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/vite"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/backend/app/main.py"
+    }
+  ]
+}
